@@ -1,11 +1,12 @@
 //el codigo 'rafce' se genera un componente nuevo
 import React from 'react'
+import CartWidget from './CartWidget'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="container-fluid navbar navbar-expand-lg navbar-dark bg-dark py-3">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Navbar</a>
+        <a className="navbar-brand" href="#">Have Fun</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -32,10 +33,11 @@ const Navbar = () => {
               <a className="nav-link">Contáctanos</a>
             </li>
           </ul>
-          <form className="d-flex">
+          <form className="d-flex me-5">
             <input className="form-control me-2" type="search" placeholder="¿Qué deseas buscar?" aria-label="Search" />
             <button className="btn btn-outline-light" type="submit">Buscar</button>
           </form>
+          <CartWidget/>
         </div>
       </div>
     </nav>
