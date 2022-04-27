@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({titulo, color, precio, btnText, imagen, boton, btnStyle}) => {
+const Card = ({titulo, color, precio, imagen, countProduct}) => {
   return (
     <div className={`card ${color}`} style={{ width: "18rem" }}>
       <img src={imagen} className="card-img-top" alt="..." />
@@ -9,9 +9,7 @@ const Card = ({titulo, color, precio, btnText, imagen, boton, btnStyle}) => {
         <p className="card-text">
           {precio}
         </p>
-        <button className={btnStyle}>
-          {btnText}
-        </button>
+        {countProduct}
       </div>
     </div>
   );

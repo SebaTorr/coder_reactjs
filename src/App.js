@@ -4,6 +4,7 @@ import Heroes from './components/Heroes';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
+
   return (
     <div>
       <Navbar />
