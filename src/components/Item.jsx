@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({titulo, color, precio, imagen, countProduct}) => {
+const Item = ({titulo, color, precio, imagen, countProduct}) => {
   return (
     <div className={`card ${color}`} style={{ width: "18rem" }}>
       <img src={imagen} className="card-img-top" alt="..." />
@@ -15,4 +15,4 @@ const Card = ({titulo, color, precio, imagen, countProduct}) => {
   );
 };
 
-export default Card;
+export default Item;
