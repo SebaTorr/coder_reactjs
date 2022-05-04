@@ -1,102 +1,69 @@
 import React, { useEffect, useState } from 'react'
-import Item from './Item'
-import ItemCount from './ItemCount'
+import ItemList from './ItemList'
 
 const ItemListContainer = ({greeting}) => {
+
+    const [products, setProducts] = useState([])
     
-    const [product, setProduct] = useState([]);
-    
-    const productos = [
-       {
-        name: 'Polerón Orange-White',
-        price: 20000
-       },
-       {
-        name: 'Polerón Yellow-Jungle',
-        price: 22000
-       },
-       {
-        name: 'Polerón Simple-Black',
-        price: 20000
-       },
-       {
-        name: 'Polerón Freedom-Black',
-        price: 15000
-       },
-   ] 
+    const data = [
+        {
+            id: 1,
+            name: 'Polerón Orange-White',
+            price: 20000,
+            description: 'Polerón línea Fuk-Off',
+            stock: 5,
+            img: 'my-app/src/assetes/img/foto_1.jpg'
+        },
+        {
+            id: 2,
+            name: 'Polerón Yellow-Jungle',
+            price: 22000,
+            description: 'Polerón línea Woozy',
+            stock: 10,
+            img: 'my-app/src/assetes/img/foto_1.jpg'
+        },
+        {
+            id: 3,
+            name: 'Polerón Simple-Jungle',
+            price: 20000,
+            description: 'Polerón línea Fuk-Off',
+            stock: 8,
+            img: 'my-app/src/assetes/img/foto_1.jpg'
+        },
+        {
+            id: 4,
+            name: 'Polerón Freedom-Black',
+            price: 15000,
+            description: 'Polerón línea Urban-X',
+            stock: 12,
+            img: 'my-app/src/assetes/img/foto_1.jpg'
+        },
+
+    ]
 
     useEffect(() => {
-        const bringProduct = new Promise((resolve, rejected) => {
+        const bringData = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(productos);
+                resolve(data)
             }, 2000);
-        });
-        
-        bringProduct
-        .then(
-            (res) => {
-                setProduct(res);
-            }
-        )
-        .then(() => console.log(product))
-        .catch((err) => console.log(err))
-        
-        return () => {}
-    }, [])
-        
-
-  function onAdd(cant) {
-      console.log(`Has agregado ${cant} productos al carrito`)
-  }
+        })
     
+        bringData.then((res) => {
+            setProducts(res)
+        })
+        .then(() => console.log(products))
+        .catch((err) => console.log(err))
+    
+      return () => {
+        
+      }
+    }, [])
+
   return (
     <main className="container-fluid d-flex-column justify-content-evenly bg-light py-5">
         <h2 style={{textAlign: 'center', marginBottom: '3rem'}}>{greeting}</h2>
         <div className="container-fluid d-flex justify-content-evenly">
-            <Item 
-                titulo = {'Polerón Orange-White'}
-                precio = {20000}
-                btnStyle = {'btn btn-dark'}
-                btnText = {'Añadir al carrito'}
-                countProduct = {<ItemCount 
-                    stock = {5}
-                    initial = {1}
-                    onAdd = {onAdd}
-                />}
-            />
-            <Item 
-                titulo = {'Polerón Orange-White'}
-                precio = {20000}
-                btnStyle = {'btn btn-dark'}
-                btnText = {'Añadir al carrito'}
-                countProduct = {<ItemCount 
-                    stock = {10}
-                    initial = {1}
-                    onAdd = {onAdd}
-                />}
-            />
-            <Item 
-                titulo = {'Polerón Orange-White'}
-                precio = {20000}
-                btnStyle = {'btn btn-dark'}
-                btnText = {'Añadir al carrito'}
-                countProduct = {<ItemCount 
-                    stock = {8}
-                    initial = {1}
-                    onAdd = {onAdd}
-                />}
-            />
-            <Item
-                titulo = {'Polerón Orange-White'}
-                precio = {20000}
-                btnStyle = {'btn btn-dark'}
-                btnText = {'Añadir al carrito'}
-                countProduct = {<ItemCount 
-                    stock = {12}
-                    initial = {1}
-                    onAdd = {onAdd}
-                />}
-            />
+            <ItemList productos={products} />
         </div>
     </main>
   )
