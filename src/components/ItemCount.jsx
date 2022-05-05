@@ -23,7 +23,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <div>
-      <p style={{fontSize: '0.8rem'}}>
+      <p className='text-center' style={{fontSize: '1rem'}}>
         Stock: {stock} Unidades
       </p>
         <div className="d-flex">

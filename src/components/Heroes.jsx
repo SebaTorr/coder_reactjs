@@ -1,22 +1,23 @@
 import React from "react";
+import imgHeroes from '../assets/img/foto_2.jpg'
 
-const Carousel = () => {
+const Heroes = () => {
   return (
-    <div className="container col-xxl-8 px-4 py-5">
+    <div className="container col-xxl-8 px-4 py-2">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div className="col-10 col-sm-8 col-lg-6">
           <img
-            src="bootstrap-themes.png"
+            src={imgHeroes}
             className="d-block mx-lg-auto img-fluid"
             alt="Bootstrap Themes"
-            width="700"
-            height="500"
+            width="450"
+            height="450"
             loading="lazy"
           />
         </div>
         <div className="col-lg-6">
-          <h1 className="display-5 fw-bold lh-1 mb-3"  style={{color: '#ff3e99'}}>
-            NUEVA COLECCIÓN FUK-OFF
+          <h1 className="display-5 fw-bold lh-1 mb-3">
+            NUEVA COLECCIÓN WooZY
           </h1>
           <p className="lead">
             Quickly design and customize responsive mobile-first sites with
@@ -27,7 +28,7 @@ const Carousel = () => {
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
             <button
               type="button"
-              className="btn btn-outline-dark btn-lg px-4 me-md-2"
+              className="btn btn-warning btn-lg px-4 me-md-2"
             >
               Ir a la tienda
             </button>
@@ -38,4 +39,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Heroes;

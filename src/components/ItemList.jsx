@@ -1,11 +1,11 @@
 import React from "react";
 import Item from "./Item";
-import ItemCount from "./ItemCount";
+/* import ItemCount from "./ItemCount"; */
 
 const ItemList = ({ productos }) => {
-  function onAdd(cant) {
+  /* function onAdd(cant) {
     console.log(`Has agregado ${cant} productos al carrito`);
-  }
+  } */
 
   return (
     <>
@@ -18,9 +18,7 @@ const ItemList = ({ productos }) => {
             description={producto.description}
             btnStyle={"btn btn-dark"}
             btnText={"Añadir al carrito"}
-            countProduct={
-              <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
-            }
+            id={producto.id}
           />
         ))
       ) : (
