@@ -24,14 +24,14 @@ const Navbar = () => {
                 Categorías
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="/">Action</a></li>
-                <li><a className="dropdown-item" href="/">Another action</a></li>
+                <li><Link className="dropdown-item" to="/">Action</Link></li>
+                <li><Link className="dropdown-item" to="/">Another action</Link></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="/">Something else here</a></li>
+                <li><Link className="dropdown-item" to="/">Something else here</Link></li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Contáctanos</a>
+              <Link className="nav-link" to="/">Contáctanos</Link>
             </li>
           </ul>
           <form className="d-flex me-5">
