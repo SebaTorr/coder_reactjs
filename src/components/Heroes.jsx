@@ -1,5 +1,6 @@
 import React from "react";
 import imgHeroes from '../assets/img/foto_2.jpg'
+import { Link } from 'react-router-dom'
 
 const Heroes = () => {
   return (
@@ -26,12 +27,13 @@ const Heroes = () => {
             extensive prebuilt components, and powerful JavaScript plugins.
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button
+            <Link
               type="button"
               className="btn btn-warning btn-lg px-4 me-md-2"
+              to="/tienda"
             >
               Ir a la tienda
-            </button>
+            </Link>
           </div>
         </div>
       </div>
